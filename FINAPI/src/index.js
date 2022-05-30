@@ -71,8 +71,8 @@ app.post("/deposit",verifyCPF,(request,response)=>{
         description,
         amount,
         created_at: new Date(),
-        type: "credit"
-    }
+        type: "credit",
+    };
 
     customer.statement.push(statementOperation);
 

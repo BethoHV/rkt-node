@@ -15,13 +15,13 @@ function verifyCPF(request,response,next){
     const customer = customers.find((customer) => customer.cpf === cpf);
 
     if(!customer){
-        return response.status(400).json({error: "Customer not found"});
+        return response.status(400).json({error: "Customer not found!"});
     }
 
     request.customer = customer;
 
     return next();
-};
+}
 
 function getBalance(statement){
   const balance = statement.reduce((acc,operation)=>{
@@ -33,7 +33,7 @@ function getBalance(statement){
     }, 0);
 
     return balance;
-};
+}
 
 app.post("/account",(request,response)=>{
     const {cpf,name} = request.body;
